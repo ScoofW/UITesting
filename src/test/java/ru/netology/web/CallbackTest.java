@@ -12,8 +12,8 @@ public class CallbackTest {
     void shouldSubmitRequest() {
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
-        form.$("[data-test-id=name] input").setValue("Никулин Юрий");
-        form.$("[data-test-id=phone] input").setValue("+71234567890");
+        form.$("[data-test-id=name] input").setValue("Григорьев Анатолий");
+        form.$("[data-test-id=phone] input").setValue("+71112223344");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         $("[data-test-id=order-success]").shouldHave(Condition.exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
@@ -24,8 +24,8 @@ public class CallbackTest {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
-        form.$("[data-test-id=name] input").setValue("Asdf");
-        form.$("[data-test-id=phone] input").setValue("+71234567890");
+        form.$("[data-test-id=name] input").setValue("Bqgfss");
+        form.$("[data-test-id=phone] input").setValue("+71112223344");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(Condition.exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
@@ -36,7 +36,7 @@ public class CallbackTest {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
-        form.$("[data-test-id=name] input").setValue("Никулин Юрий");
+        form.$("[data-test-id=name] input").setValue("Григорьев Анатолий");
         form.$("[data-test-id=phone] input").setValue("+7123456789");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
@@ -48,7 +48,7 @@ public class CallbackTest {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
-        form.$("[data-test-id=name] input").setValue("Никулин Юрий");
+        form.$("[data-test-id=name] input").setValue("Григорьев Анатолий");
         form.$("[data-test-id=phone] input").setValue("");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
@@ -61,7 +61,7 @@ public class CallbackTest {
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
         form.$("[data-test-id=name] input").setValue("");
-        form.$("[data-test-id=phone] input").setValue("+71234567890");
+        form.$("[data-test-id=phone] input").setValue("+71112223344");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(Condition.exactText("Поле обязательно для заполнения"));
@@ -72,8 +72,8 @@ public class CallbackTest {
 
         open("http://localhost:9999/");
         SelenideElement form = $(".form");
-        form.$("[data-test-id=name] input").setValue("Никулин Юрий");
-        form.$("[data-test-id=phone] input").setValue("+71234567890");
+        form.$("[data-test-id=name] input").setValue("Григорьев Анатолий");
+        form.$("[data-test-id=phone] input").setValue("+71112223344");
         form.$("button.button").click();
         form.$("[data-test-id=agreement]").should(Condition.cssClass("input_invalid"));
 
